@@ -1,0 +1,39 @@
+{
+  "name": "wander-buddy-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "watch": "nodemon --watch './src/**/*.ts' --exec ts-node ./src/index.ts",
+    "start": "pm2 start 'ts-node ./src/index.ts' --name emotion-prediction.api",
+    "stop": "pm2 delete emotion-prediction.api",
+    "redb": "npm run syncDb && npm run encryptDb && npm run migrateDb",
+    "migrateDb": "ts-node ./src/scripts/dbMigrate.ts",
+    "syncDb": "ts-node ./src/scripts/dbSync.ts",
+    "encryptDb": "ts-node ./src/scripts/dbEncrypt.ts",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "build": "rm -rf dist && tsc --sourceMap -p ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^5.7.1",
+    "@fastify/cors": "^8.3.0",
+    "@fastify/jwt": "^7.0.0",
+    "@fastify/sensible": "^5.2.0",
+    "@fastify/swagger": "^7.6.1",
+    "bcryptjs": "^2.4.3",
+    "fastify": "^4.18.0",
+    "fastify-oas": "^3.0.8",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.14",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/node": "^20.11.17",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
