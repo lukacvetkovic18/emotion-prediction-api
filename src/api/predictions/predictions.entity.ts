@@ -12,7 +12,7 @@ export class Prediction extends BaseEntity {
     @CreateDateColumn()
     createdAt: Date;
 
-    @Column("longtext")
+    @Column("text")
     image: string;
 
     @Column("varchar")
