@@ -28,6 +28,7 @@
     "fastify-oas": "^3.0.8",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.14",
+    "ts-node": "^10.9.2",
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
