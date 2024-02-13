@@ -7,10 +7,10 @@ export class User extends BaseEntity {
     @PrimaryGeneratedColumn("increment")
     id: number;
 
-    @Column("varchar", { unique: true })
+    @Column("text", { unique: true })
     username: string;
 
-    @Column()
+    @Column("text")
     password: string;
 
     @OneToMany(() => Prediction, (prediction) => prediction.user, { cascade: true })

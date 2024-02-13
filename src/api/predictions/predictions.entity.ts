@@ -15,9 +15,9 @@ export class Prediction extends BaseEntity {
     @Column("text")
     image: string;
 
-    @Column("varchar")
+    @Column("text")
     prediction: string;
 
-    @Column("double")
+    @Column("double precision")
     predictionPercentage: number;
 }
