@@ -6,6 +6,8 @@ config();
 
 export const AppDataSource = new DataSource({
     type: "mysql",
+    connectTimeout  : 60 * 60 * 1000,
+    acquireTimeout  : 60 * 60 * 1000,
     host: process.env.TYPEORM_HOST,
     port: +process.env.TYPEORM_PORT,
     username: process.env.TYPEORM_USERNAME,
