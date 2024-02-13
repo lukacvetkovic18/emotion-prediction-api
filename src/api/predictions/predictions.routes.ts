@@ -1,5 +1,5 @@
 import predictionsCtrl from "./predictions.ctrl";
-import { deletePredictionSchema, getPredictionsSchema, savePredictionSchema } from "./predictions.schema";
+import { getPredictionsSchema, savePredictionSchema } from "./predictions.schema";
 
 export default async (fastify, opts) => {
     const predictionController = predictionsCtrl(fastify);
@@ -18,13 +18,5 @@ export default async (fastify, opts) => {
         preValidation: fastify.userACL,
         handler: (await predictionController).getPredictions,
         schema: getPredictionsSchema
-    });
-
-    fastify.route({
-        method: "DELETE",
-        url: "/api/predictions/:predictionId",
-        preValidation: fastify.userACL,
-        handler: (await predictionController).deletePrediction,
-        schema: deletePredictionSchema
     });
 }

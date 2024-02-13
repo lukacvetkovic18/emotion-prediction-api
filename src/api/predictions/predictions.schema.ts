@@ -62,26 +62,3 @@ export const getPredictionsSchema = {
         }
     }
 }
-
-export const deletePredictionSchema = {
-    summary: "Deletes a prediction with given ID if it belongs to logged in user",
-    tags: ["predictions"],
-    params: {
-        type: "object",
-        properties: {
-            predictionId: {
-                type: "number"
-            },
-        }
-    },
-    response: {
-        200: {
-            type: "object",
-            properties: {
-                message: {
-                    type: "string"
-                },
-            }
-        },
-    }
-}

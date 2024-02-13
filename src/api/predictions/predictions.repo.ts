@@ -27,20 +27,4 @@ export const PredictionRepository = AppDataSource.getRepository(Prediction).exte
         });
     },
 
-    async deletePrediction(userId: number, data) {
-        const prediction = await _pR.findOne({
-            where: {
-                id: data.predictionId,
-                user: {
-                    id: userId
-                }
-            }
-        });
-        if(!prediction) {
-            throw new Error("Prediction doesn't exist");
-        }
-        await _pR.remove(prediction);
-        return { message: "You have successfully deleted your prediction." };
-    }
-
 })

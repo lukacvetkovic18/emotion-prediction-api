@@ -21,18 +21,8 @@ export default async (server) => {
         }
     };
 
-    const deletePrediction = async (req, reply) => {
-        try {
-            return await pR.deletePrediction(req.user.id, req.params);
-        }
-        catch(e){
-            return server.httpErrors.createError(500, e);
-        }
-    };
-
     return {
         savePrediction,
-        getPredictions,
-        deletePrediction
+        getPredictions
     };
 }
